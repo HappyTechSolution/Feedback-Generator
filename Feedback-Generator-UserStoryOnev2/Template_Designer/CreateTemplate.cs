@@ -21,7 +21,7 @@ namespace Template_Designer
         private void button2_Click(object sender, EventArgs e)
         {
             //Confirm Button Click.
-            CreateTemplateSections cts = new CreateTemplateSections();
+            
             CreateNewTemplate input = new CreateNewTemplate();
             input.addTemplateName(textBox1.Text);
             input.addTemplateReviewer(textBox2.Text);
@@ -29,13 +29,14 @@ namespace Template_Designer
             input.addTemplateFeedbackType(selectFeedbackTypeBox.Text);
             input.writeTemplateDetailsToDB();
             updateGridView();
-            cts.ShowDialog();
+            enterSectionTitle est = new enterSectionTitle();
+            est.Show();
         }
 
         private void CreateTemplate_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'feedbackGeneratorDBDataSet.createTemplateFeedbackType' table. You can move, or remove it, as needed.
-            //          this.createTemplateFeedbackTypeTableAdapter.Fill(this.feedbackGeneratorDBDataSet.createTemplateFeedbackType);
+            this.createTemplateFeedbackTypeTableAdapter.Fill(this.feedbackGeneratorDBDataSet.createTemplateFeedbackType);
             updateGridView();
         }
 

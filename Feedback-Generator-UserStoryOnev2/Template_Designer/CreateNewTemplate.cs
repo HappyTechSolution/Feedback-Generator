@@ -79,4 +79,20 @@ namespace Template_Designer
             throw new NotImplementedException();
         }
     }
+
+    class addToSection
+    {
+        private string sectionNameOne;
+
+        public void addSectionName(string addSectionName)
+        {
+            sectionNameOne = addSectionName;
+        }
+
+        public void writeNameToDB()
+        {
+            DBConnection.getDBConnectionToInstance().insertSectionTitle(Constants.InsertSectionName, sectionNameOne);
+        }
+
+    }
 }

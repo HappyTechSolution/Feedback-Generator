@@ -76,6 +76,12 @@
       <DependentUpon>CreateTemplateSections.cs</DependentUpon>
     </Compile>
     <Compile Include="DBConnection.cs" />
+    <Compile Include="enterSectionTitle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="enterSectionTitle.Designer.cs">
+      <DependentUpon>enterSectionTitle.cs</DependentUpon>
+    </Compile>
     <Compile Include="feedbackGeneratorDBDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -105,6 +111,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CreateTemplateSections.resx">
       <DependentUpon>CreateTemplateSections.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="enterSectionTitle.resx">
+      <DependentUpon>enterSectionTitle.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Template_menu.resx">
       <DependentUpon>Template_menu.cs</DependentUpon>
@@ -157,15 +166,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="feedbackGeneratorDB.mdf">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="feedbackGeneratorDB_log.ldf">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <DependentUpon>feedbackGeneratorDB.mdf</DependentUpon>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
       <Visible>False</Visible>
       <ProductName>Microsoft .NET Framework 4.5.2 %28x86 and x64%29</ProductName>
@@ -176,6 +176,15 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="feedbackDatabse.mdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="feedbackDatabse_log.ldf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <DependentUpon>feedbackDatabse.mdf</DependentUpon>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

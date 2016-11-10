@@ -29,16 +29,19 @@
         private void InitializeComponent()
         {
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.button4 = new System.Windows.Forms.Button();
+            this.AddSectionButton = new System.Windows.Forms.Button();
+            this.saveButton = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.titleTextBox = new System.Windows.Forms.TextBox();
+            this.commentTextBox = new System.Windows.Forms.RichTextBox();
+            this.AddCommentButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button1.Location = new System.Drawing.Point(13, 223);
+            this.button1.Location = new System.Drawing.Point(13, 299);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 0;
@@ -46,69 +49,101 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
+            // AddSectionButton
             // 
-            this.button2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.button2.Location = new System.Drawing.Point(505, 223);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Add";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.AddSectionButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.AddSectionButton.Location = new System.Drawing.Point(346, 299);
+            this.AddSectionButton.Name = "AddSectionButton";
+            this.AddSectionButton.Size = new System.Drawing.Size(104, 23);
+            this.AddSectionButton.TabIndex = 1;
+            this.AddSectionButton.Text = "Add New Section";
+            this.AddSectionButton.UseVisualStyleBackColor = true;
+            this.AddSectionButton.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button3
+            // saveButton
             // 
-            this.button3.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.button3.Location = new System.Drawing.Point(401, 223);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(98, 23);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Save/Preview";
-            this.button3.UseVisualStyleBackColor = true;
+            this.saveButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.saveButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.saveButton.Location = new System.Drawing.Point(459, 299);
+            this.saveButton.Name = "saveButton";
+            this.saveButton.Size = new System.Drawing.Size(96, 23);
+            this.saveButton.TabIndex = 2;
+            this.saveButton.Text = "Save/Preview";
+            this.saveButton.UseVisualStyleBackColor = true;
             // 
-            // panel1
+            // label1
             // 
-            this.panel1.Location = new System.Drawing.Point(13, 13);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(576, 175);
-            this.panel1.TabIndex = 3;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(36, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(30, 13);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Title:";
             // 
-            // button4
+            // label2
             // 
-            this.button4.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.button4.Location = new System.Drawing.Point(505, 194);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(84, 23);
-            this.button4.TabIndex = 4;
-            this.button4.Text = "Add Comment";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(12, 36);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(54, 13);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Comment:";
+            // 
+            // titleTextBox
+            // 
+            this.titleTextBox.Location = new System.Drawing.Point(72, 6);
+            this.titleTextBox.Name = "titleTextBox";
+            this.titleTextBox.Size = new System.Drawing.Size(367, 20);
+            this.titleTextBox.TabIndex = 5;
+            // 
+            // commentTextBox
+            // 
+            this.commentTextBox.Location = new System.Drawing.Point(72, 33);
+            this.commentTextBox.Name = "commentTextBox";
+            this.commentTextBox.Size = new System.Drawing.Size(477, 245);
+            this.commentTextBox.TabIndex = 7;
+            this.commentTextBox.Text = "";
+            // 
+            // AddCommentButton
+            // 
+            this.AddCommentButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.AddCommentButton.Location = new System.Drawing.Point(228, 299);
+            this.AddCommentButton.Name = "AddCommentButton";
+            this.AddCommentButton.Size = new System.Drawing.Size(112, 23);
+            this.AddCommentButton.TabIndex = 8;
+            this.AddCommentButton.Text = "Add New Comment";
+            this.AddCommentButton.UseVisualStyleBackColor = true;
+            this.AddCommentButton.Click += new System.EventHandler(this.AddCommentButton_Click);
             // 
             // CreateTemplateSections
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(601, 258);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.ClientSize = new System.Drawing.Size(566, 334);
+            this.Controls.Add(this.AddCommentButton);
+            this.Controls.Add(this.commentTextBox);
+            this.Controls.Add(this.titleTextBox);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.saveButton);
+            this.Controls.Add(this.AddSectionButton);
             this.Controls.Add(this.button1);
             this.Name = "CreateTemplateSections";
             this.Text = "CreateTemplateSections";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button AddSectionButton;
+        private System.Windows.Forms.Button saveButton;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox titleTextBox;
+        private System.Windows.Forms.RichTextBox commentTextBox;
+        private System.Windows.Forms.Button AddCommentButton;
     }
 }

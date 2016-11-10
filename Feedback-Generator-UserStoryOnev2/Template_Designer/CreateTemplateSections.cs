@@ -11,12 +11,7 @@ using System.Windows.Forms;
 namespace Template_Designer
 {
     public partial class CreateTemplateSections : Form
-    {
-        int pointX = 50;
-        int pointY = 20;
-        int count1 = 0;
-        int panelSize = 0;
-        int windowSize = 0;
+    {     
 
         public object TitleBox { get; private set; }
         public object CommentsBox { get; private set; }
@@ -24,13 +19,16 @@ namespace Template_Designer
         public CreateTemplateSections()
         {
             InitializeComponent();
+            
+               
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            CreateTemplateSections CTS = new CreateTemplateSections();
-            CTS.Show();
-            this.Close();
+            
+            Close();
+            enterSectionTitle est = new enterSectionTitle();
+            est.Show();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -40,38 +38,9 @@ namespace Template_Designer
 
         private void button4_Click(object sender, EventArgs e)
         {
-            //  Label Title = new Label();
-            //  Title.Text = "Title:";
-            // label1.Location = new Point(10, pointY);
+            
 
-            TextBox TitleBox = new TextBox();
-            TitleBox.Text = "Title";
-            TitleBox.Location = new Point(pointX, pointY);
-            //  panel1.Controls.Add(Title);
-            TextBox CommentsBox = new TextBox();
-            CommentsBox.Text = "Comment";
-            CommentsBox.Location = new Point(200, pointY);
-            CommentsBox.Size = new Size(200, 23);
-            Button updateButton = new Button();
-            updateButton.Text = "Update";
-            updateButton.Location = new Point(450, pointY);
-            panel1.Controls.Add(TitleBox);
-            panel1.Controls.Add(CommentsBox);
-            panel1.Controls.Add(updateButton);
-            panel1.Show();
-            pointY += 23;
-            count1 += 1;
-            if (count1 > 6)
-            {
-                panelSize += 23;
-                windowSize += 23;
-                panel1.Size = new Size(467, 175 + panelSize);
-                this.Size = new Size(508, 297 + windowSize);
-
-            }
-           
-        }   // reference http://www.c-sharpcorner.com/blogs/generate-textbox-dynamically-at-runtime-in-windows-form-application1
-
+        }
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
@@ -79,11 +48,30 @@ namespace Template_Designer
 
         private void updateButton_Click(object sender, EventArgs e)
         {
-            CreateNewOptions input = new CreateNewOptions();
-            input.addOptionTitle(TitleBox.Text);
-            input.addOptionComment(CommentsBox.Text);
-            input.writeOptionDetailsToDB();
+            //CreateNewOptions input = new CreateNewOptions();
+            //input.addOptionTitle(TitleBox.Text);
+            //input.addOptionComment(CommentsBox.Text);
+            //input.writeOptionDetailsToDB();
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         
+
+        }   // reference [adding multiple text boxes] http://www.c-sharpcorner.com/blogs/generate-textbox-dynamically-at-runtime-in-windows-form-application1
+
+        private void AddCommentButton_Click(object sender, EventArgs e)
+        {
+            CreateNewOptions input = new CreateNewOptions();
+            input.addOptionTitle(titleTextBox.Text);
+            input.addOptionComment(commentTextBox.Text);
+            input.writeOptionDetailsToDB();
+            Close();
+            CreateTemplateSections reOpen = new CreateTemplateSections();
+            reOpen.Show();
+            
+        }
     }
+
 }
