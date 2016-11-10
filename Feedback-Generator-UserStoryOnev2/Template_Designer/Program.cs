@@ -16,12 +16,14 @@ namespace Template_Designer
         {
             //Set the Database Connection String
             DBConnection.ConnectionStr = Properties.Settings.Default.feedbackGeneratorDBConnection;
- //           DBConnection.ConnectionStr = Properties.Settings.Default.myConn;
+            //           DBConnection.ConnectionStr = Properties.Settings.Default.myConn;
 
             //            DBConnection initialise = new DBConnection();
             //            initialise.openConnection();
 
             //Opens User Interface.
+            addToSection test = new addToSection();
+            test.getLatestTemplateID();
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);

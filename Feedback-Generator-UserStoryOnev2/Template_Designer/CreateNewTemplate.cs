@@ -88,10 +88,22 @@ namespace Template_Designer
         {
             sectionNameOne = addSectionName;
         }
+    
 
         public void writeNameToDB()
         {
-            DBConnection.getDBConnectionToInstance().insertSectionTitle(Constants.InsertSectionName, sectionNameOne);
+            DBConnection test = new DBConnection();
+            int temp;
+            temp = test.tempTemplateID;
+            DBConnection.getDBConnectionToInstance().insertSectionTitle(Constants.InsertSectionName, sectionNameOne, temp);
+        }
+
+        public void getLatestTemplateID()
+        {
+
+            //DBConnection.getDBConnectionToInstance().insertOption(Constants.InsertOption, optionTitleOne,optionCommentOne);
+            DBConnection.getDBConnectionToInstance().getTempTemplateID(Constants.getTempTemplateID);
+
         }
 
     }

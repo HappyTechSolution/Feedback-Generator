@@ -26,6 +26,8 @@ namespace Template_Designer
 
         private System.Data.SqlClient.SqlDataAdapter dataAdapter;
 
+        public int tempTemplateID;
+
         //Constructors
 
         //Properties
@@ -85,12 +87,13 @@ namespace Template_Designer
         }
 
         //Insert the Section Name into the Section name Database
-        public void insertSectionTitle(string sqlQuery, string x)
+        public void insertSectionTitle(string sqlQuery, string x, int y)
         {
 
             SqlCommand command = new SqlCommand();
             command.CommandType = CommandType.Text;
             command.CommandText = sqlQuery;
+            command.Parameters.Add("templateID", y);
             command.Parameters.Add("sectionNameOne", x);
             openConnection();
             command.Connection = connectionToDB;
@@ -100,6 +103,24 @@ namespace Template_Designer
             closeConnection();
 
             Console.WriteLine("n-" + n);
+        }
+
+        //Get the latest template ID
+        public void getTempTemplateID(string sqlQuery)
+        {
+
+            SqlCommand command = new SqlCommand();
+            command.CommandType = CommandType.Text;
+            command.CommandText = sqlQuery;
+            //command.Parameters.Add("sectionNameOne", x);
+            openConnection();
+            command.Connection = connectionToDB;
+            int ID = (int)command.ExecuteScalar();
+            tempTemplateID = ID;
+            //command.Connection.Close();
+            closeConnection();
+
+          Console.WriteLine("n = " + ID);
         }
 
 
