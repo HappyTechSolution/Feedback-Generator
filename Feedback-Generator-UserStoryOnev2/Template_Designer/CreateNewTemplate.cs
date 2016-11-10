@@ -83,19 +83,16 @@ namespace Template_Designer
     class addToSection
     {
         private string sectionNameOne;
+        private int tempID;
 
         public void addSectionName(string addSectionName)
         {
             sectionNameOne = addSectionName;
         }
-    
 
-        public void writeNameToDB()
+        public void turn_to_ID(int g)
         {
-            DBConnection test = new DBConnection();
-            int temp;
-            temp = test.tempTemplateID;
-            DBConnection.getDBConnectionToInstance().insertSectionTitle(Constants.InsertSectionName, sectionNameOne, temp);
+            this.tempID = g;
         }
 
         public void getLatestTemplateID()
@@ -104,6 +101,15 @@ namespace Template_Designer
             //DBConnection.getDBConnectionToInstance().insertOption(Constants.InsertOption, optionTitleOne,optionCommentOne);
             DBConnection.getDBConnectionToInstance().getTempTemplateID(Constants.getTempTemplateID);
 
+        }
+
+        public void writeNameToDB()
+        {
+            //DBConnection test = new DBConnection();
+            //int temp;
+            //temp = test.tempTemplateID;
+            //tempID = 10;
+            DBConnection.getDBConnectionToInstance().insertSectionTitle(Constants.InsertSectionName, sectionNameOne, this.tempID);
         }
 
     }

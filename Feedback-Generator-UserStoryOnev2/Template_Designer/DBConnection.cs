@@ -93,12 +93,11 @@ namespace Template_Designer
             SqlCommand command = new SqlCommand();
             command.CommandType = CommandType.Text;
             command.CommandText = sqlQuery;
-            command.Parameters.Add("templateID", y);
-            command.Parameters.Add("sectionNameOne", x);
+            command.Parameters.AddWithValue("@templateID", y);
+            command.Parameters.AddWithValue("@sectionNameOne", x);
             openConnection();
             command.Connection = connectionToDB;
             int n = command.ExecuteNonQuery();
-
             //command.Connection.Close();
             closeConnection();
 
@@ -110,17 +109,22 @@ namespace Template_Designer
         {
 
             SqlCommand command = new SqlCommand();
+            addToSection getID = new addToSection();
+
             command.CommandType = CommandType.Text;
             command.CommandText = sqlQuery;
+           
             //command.Parameters.Add("sectionNameOne", x);
             openConnection();
             command.Connection = connectionToDB;
-            int ID = (int)command.ExecuteScalar();
-            tempTemplateID = ID;
+            int ID = Convert.ToInt32(command.ExecuteScalar().ToString());
+            command.ExecuteNonQuery();
+            //tempTemplateID = ID;
+            getID.turn_to_ID(ID);
             //command.Connection.Close();
             closeConnection();
 
-          Console.WriteLine("n = " + ID);
+            Console.WriteLine("n = " + ID);
         }
 
 

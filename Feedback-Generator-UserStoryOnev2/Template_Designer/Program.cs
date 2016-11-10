@@ -22,8 +22,8 @@ namespace Template_Designer
             //            initialise.openConnection();
 
             //Opens User Interface.
-            addToSection test = new addToSection();
-            test.getLatestTemplateID();
+            //addToSection test = new addToSection();
+            //test.getLatestTemplateID();
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);

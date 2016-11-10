@@ -21,7 +21,9 @@ namespace Template_Designer
         {
             CreateTemplateSections cts = new CreateTemplateSections();
             addToSection input = new addToSection();
+            input.getLatestTemplateID();
             input.addSectionName(sectionTitleTextbox.Text);
+
             input.writeNameToDB();
             Close();
             cts.Show();
