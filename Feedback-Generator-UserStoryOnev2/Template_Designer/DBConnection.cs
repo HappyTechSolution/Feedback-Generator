@@ -118,7 +118,7 @@ namespace Template_Designer
             openConnection();
             command.Connection = connectionToDB;
             int ID = Convert.ToInt32(command.ExecuteScalar().ToString());
-            command.ExecuteNonQuery();
+            //command.ExecuteNonQuery();
             //tempTemplateID = ID;
             getID.turn_to_ID(ID);
             //command.Connection.Close();

@@ -200,3 +200,18 @@ C:\Users\User\Software\Feedback-Generator\Feedback-Generator-UserStoryOnev2\Temp
 C:\Users\User\Software\Feedback-Generator\Feedback-Generator-UserStoryOnev2\Template_Designer\obj\Debug\Template_Designer.Properties.Resources.resources
 C:\Users\User\Software\Feedback-Generator\Feedback-Generator-UserStoryOnev2\Template_Designer\obj\Debug\Template_Designer.viewDatabase.resources
 C:\Users\User\Software\Feedback-Generator\Feedback-Generator-UserStoryOnev2\Template_Designer\obj\Debug\feedbackGenerator.csproj.GenerateResource.Cache
+C:\Users\Angus\SE assignment\Feedback-Generator\Feedback-Generator-UserStoryOnev2\Template_Designer\bin\Debug\Template_Designer.exe.config
+C:\Users\Angus\SE assignment\Feedback-Generator\Feedback-Generator-UserStoryOnev2\Template_Designer\obj\Debug\Template_Designer.exe
+C:\Users\Angus\SE assignment\Feedback-Generator\Feedback-Generator-UserStoryOnev2\Template_Designer\obj\Debug\Template_Designer.pdb
+C:\Users\Angus\SE assignment\Feedback-Generator\Feedback-Generator-UserStoryOnev2\Template_Designer\bin\Debug\feedbackDatabse.mdf
+C:\Users\Angus\SE assignment\Feedback-Generator\Feedback-Generator-UserStoryOnev2\Template_Designer\bin\Debug\feedbackDatabse_log.ldf
+C:\Users\Angus\SE assignment\Feedback-Generator\Feedback-Generator-UserStoryOnev2\Template_Designer\bin\Debug\Template_Designer.exe
+C:\Users\Angus\SE assignment\Feedback-Generator\Feedback-Generator-UserStoryOnev2\Template_Designer\bin\Debug\Template_Designer.pdb
+C:\Users\Angus\SE assignment\Feedback-Generator\Feedback-Generator-UserStoryOnev2\Template_Designer\obj\Debug\feedbackGenerator.csprojResolveAssemblyReference.cache
+C:\Users\Angus\SE assignment\Feedback-Generator\Feedback-Generator-UserStoryOnev2\Template_Designer\obj\Debug\Template_Designer.CreateTemplate.resources
+C:\Users\Angus\SE assignment\Feedback-Generator\Feedback-Generator-UserStoryOnev2\Template_Designer\obj\Debug\Template_Designer.CreateTemplateSections.resources
+C:\Users\Angus\SE assignment\Feedback-Generator\Feedback-Generator-UserStoryOnev2\Template_Designer\obj\Debug\Template_Designer.enterSectionTitle.resources
+C:\Users\Angus\SE assignment\Feedback-Generator\Feedback-Generator-UserStoryOnev2\Template_Designer\obj\Debug\Template_Designer.TemplateSelector.resources
+C:\Users\Angus\SE assignment\Feedback-Generator\Feedback-Generator-UserStoryOnev2\Template_Designer\obj\Debug\Template_Designer.Properties.Resources.resources
+C:\Users\Angus\SE assignment\Feedback-Generator\Feedback-Generator-UserStoryOnev2\Template_Designer\obj\Debug\Template_Designer.viewDatabase.resources
+C:\Users\Angus\SE assignment\Feedback-Generator\Feedback-Generator-UserStoryOnev2\Template_Designer\obj\Debug\feedbackGenerator.csproj.GenerateResource.Cache
