@@ -57,6 +57,7 @@ namespace Template_Designer
     {
         private string optionTitleOne;
         private string optionCommentOne;
+        public static int secID = 0;
 
         public void addOptionTitle(string optionNewTitle)
         {
@@ -67,10 +68,21 @@ namespace Template_Designer
         {
             optionCommentOne = optionNewComment;
         }
+        public int turn_to_SecID(int g)
+        {
+            secID = g;
+            return secID;
+        }
+        public void getLatestsectionID()
+        {
 
+            //DBConnection.getDBConnectionToInstance().insertOption(Constants.InsertOption, optionTitleOne,optionCommentOne);
+            DBConnection.getDBConnectionToInstance().getSectioneID(Constants.getSectionsID);
+
+        }
         public void writeOptionDetailsToDB()
         {
-            DBConnection.getDBConnectionToInstance().insertOption(Constants.InsertOption, optionTitleOne,optionCommentOne);
+            DBConnection.getDBConnectionToInstance().insertOption(Constants.InsertOption, optionTitleOne,optionCommentOne, secID);
 
         }
 
@@ -111,3 +123,4 @@ namespace Template_Designer
 
     }
 }
+

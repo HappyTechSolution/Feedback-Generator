@@ -30,7 +30,6 @@
         {
             this.button1 = new System.Windows.Forms.Button();
             this.AddSectionButton = new System.Windows.Forms.Button();
-            this.saveButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.titleTextBox = new System.Windows.Forms.TextBox();
@@ -59,17 +58,6 @@
             this.AddSectionButton.Text = "Add New Section";
             this.AddSectionButton.UseVisualStyleBackColor = true;
             this.AddSectionButton.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // saveButton
-            // 
-            this.saveButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.saveButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.saveButton.Location = new System.Drawing.Point(459, 299);
-            this.saveButton.Name = "saveButton";
-            this.saveButton.Size = new System.Drawing.Size(96, 23);
-            this.saveButton.TabIndex = 2;
-            this.saveButton.Text = "Save/Preview";
-            this.saveButton.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -125,7 +113,6 @@
             this.Controls.Add(this.titleTextBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.saveButton);
             this.Controls.Add(this.AddSectionButton);
             this.Controls.Add(this.button1);
             this.Name = "CreateTemplateSections";
@@ -139,7 +126,6 @@
 
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button AddSectionButton;
-        private System.Windows.Forms.Button saveButton;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox titleTextBox;

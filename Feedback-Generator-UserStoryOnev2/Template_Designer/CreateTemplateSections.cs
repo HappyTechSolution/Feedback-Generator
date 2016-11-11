@@ -64,6 +64,7 @@ namespace Template_Designer
         private void AddCommentButton_Click(object sender, EventArgs e)
         {
             CreateNewOptions input = new CreateNewOptions();
+            input.getLatestsectionID();
             input.addOptionTitle(titleTextBox.Text);
             input.addOptionComment(commentTextBox.Text);
             input.writeOptionDetailsToDB();
