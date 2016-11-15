@@ -1,1 +1,0 @@
-﻿INSERT INTO createTemplate (templateName, templateReviewer, templatePosition) VALUES ('dfuh','hwef','sdfb');
