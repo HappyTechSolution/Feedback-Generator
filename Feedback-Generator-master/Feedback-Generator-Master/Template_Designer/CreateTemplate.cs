@@ -11,14 +11,12 @@ namespace Template_Designer
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void cancelButton_Click(object sender, EventArgs e)
         {
-            this.Close();
-            //fill in the grid 
-          
+            this.Close();          
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void confirmButton_Click(object sender, EventArgs e)
         {
             //Confirm Button Click.
             
@@ -51,17 +49,17 @@ namespace Template_Designer
         }
 
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void templateName_TextChanged(object sender, EventArgs e)
         {
             //Template Name Box.
         }
 
-        private void textBox2_TextChanged(object sender, EventArgs e)
+        private void reviewerName_TextChanged(object sender, EventArgs e)
         {
             //template reviewer box
         }
 
-        private void textBox3_TextChanged(object sender, EventArgs e)
+        private void positionName_TextChanged(object sender, EventArgs e)
         {
             //template position box
         }

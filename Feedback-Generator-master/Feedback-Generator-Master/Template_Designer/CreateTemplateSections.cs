@@ -18,40 +18,24 @@ namespace Template_Designer
 
         public CreateTemplateSections()
         {
-            InitializeComponent();
-            
-               
+            InitializeComponent();                           
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            
+        private void newSectionButton_Click(object sender, EventArgs e)
+        {            
             Close();
             enterSectionTitle est = new enterSectionTitle();
             est.Show();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void cancelButton_Click(object sender, EventArgs e)
         {
             this.Close(); 
         }
 
-        private void button4_Click(object sender, EventArgs e)
-        {
-            
-
-        }
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
-        }
-
-        private void updateButton_Click(object sender, EventArgs e)
-        {
-            //CreateNewOptions input = new CreateNewOptions();
-            //input.addOptionTitle(TitleBox.Text);
-            //input.addOptionComment(CommentsBox.Text);
-            //input.writeOptionDetailsToDB();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -72,6 +56,16 @@ namespace Template_Designer
             CreateTemplateSections reOpen = new CreateTemplateSections();
             reOpen.Show();
             
+        }
+
+        private void commentTextBox_TextChanged(object sender, EventArgs e)
+        {
+            //options title text box
+        }
+
+        private void titleTextBox_TextChanged(object sender, EventArgs e)
+        {
+            //options comment text box
         }
     }
 

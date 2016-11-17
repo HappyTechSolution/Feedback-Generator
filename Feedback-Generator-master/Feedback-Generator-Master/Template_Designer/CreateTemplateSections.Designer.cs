@@ -46,7 +46,7 @@
             this.button1.TabIndex = 0;
             this.button1.Text = "Cancel";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.cancelButton_Click);
             // 
             // AddSectionButton
             // 
@@ -57,7 +57,7 @@
             this.AddSectionButton.TabIndex = 1;
             this.AddSectionButton.Text = "Add New Section";
             this.AddSectionButton.UseVisualStyleBackColor = true;
-            this.AddSectionButton.Click += new System.EventHandler(this.button2_Click);
+            this.AddSectionButton.Click += new System.EventHandler(this.newSectionButton_Click);
             // 
             // label1
             // 
@@ -83,6 +83,7 @@
             this.titleTextBox.Name = "titleTextBox";
             this.titleTextBox.Size = new System.Drawing.Size(367, 20);
             this.titleTextBox.TabIndex = 5;
+            this.titleTextBox.TextChanged += new System.EventHandler(this.titleTextBox_TextChanged);
             // 
             // commentTextBox
             // 
@@ -91,6 +92,7 @@
             this.commentTextBox.Size = new System.Drawing.Size(477, 245);
             this.commentTextBox.TabIndex = 7;
             this.commentTextBox.Text = "";
+            this.commentTextBox.TextChanged += new System.EventHandler(this.commentTextBox_TextChanged);
             // 
             // AddCommentButton
             // 
