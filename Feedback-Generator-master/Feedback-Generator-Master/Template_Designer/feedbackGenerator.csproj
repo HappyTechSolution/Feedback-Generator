@@ -78,6 +78,13 @@
       <DependentUpon>CreateTemplateSections.cs</DependentUpon>
     </Compile>
     <Compile Include="DBConnection.cs" />
+    <Compile Include="editMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="editMenu.Designer.cs">
+      <DependentUpon>editMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="editTemplate.cs" />
     <Compile Include="enterSectionTitle.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,6 +100,18 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>feedbackGeneratorDBDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="removeTemplate.cs" />
+    <Compile Include="removeTemplateWarning.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="removeTemplateWarning.Designer.cs">
+      <DependentUpon>removeTemplateWarning.cs</DependentUpon>
+    </Compile>
+    <Compile Include="templateNameDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>templateNameDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Template_menu.cs">
       <SubType>Form</SubType>
@@ -114,8 +133,14 @@
     <EmbeddedResource Include="CreateTemplateSections.resx">
       <DependentUpon>CreateTemplateSections.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="editMenu.resx">
+      <DependentUpon>editMenu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="enterSectionTitle.resx">
       <DependentUpon>enterSectionTitle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="removeTemplateWarning.resx">
+      <DependentUpon>removeTemplateWarning.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Template_menu.resx">
       <DependentUpon>Template_menu.cs</DependentUpon>
@@ -163,6 +188,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="templateNameDataSet.xsc">
+      <DependentUpon>templateNameDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="templateNameDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>templateNameDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="templateNameDataSet.xss">
+      <DependentUpon>templateNameDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -184,8 +220,8 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="feedbackDatabse_log.ldf">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <DependentUpon>feedbackDatabse.mdf</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
