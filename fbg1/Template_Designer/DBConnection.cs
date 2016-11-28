@@ -88,7 +88,7 @@ namespace Template_Designer
             command.ExecuteNonQuery();
 
             //Closes the connection
-            closeConnection();           
+            closeConnection();
         }
 
         //A method to insert the section name and the current template ID
@@ -122,7 +122,7 @@ namespace Template_Designer
             addToSection getID = new addToSection();
             command.CommandType = CommandType.Text;
             command.CommandText = sqlQuery;
-           
+
             //Opens Connection to the Database.
             openConnection();
             command.Connection = connectionToDB;
@@ -207,6 +207,126 @@ namespace Template_Designer
             closeConnection();
         }
 
+
+        public List<string> displayTemplateNames(string sqlQuery)
+        {
+            List<string> templateName = new List<string>();
+
+            //Create SQL Command object.
+            SqlCommand command = new SqlCommand();
+            command.CommandType = CommandType.Text;
+            command.CommandText = sqlQuery;
+
+            //Opens Connection to the Database.
+            openConnection();
+            command.Connection = connectionToDB;
+
+            //Executes the SQL Query
+            using (var reader = command.ExecuteReader())
+            {
+                while (reader.Read())
+                    templateName.Add(reader.GetString(0));
+            }
+
+
+            //command.Connection.Close();
+            closeConnection();
+
+            //returns the list
+            return templateName;
+        }
+        public int getTempID(string sqlQuery, string z)
+        {
+            SqlCommand command = new SqlCommand();
+            command.CommandType = CommandType.Text;
+            command.CommandText = sqlQuery;
+
+            command.Parameters.AddWithValue("@tempName", z);
+
+            openConnection();
+            command.Connection = connectionToDB;
+
+            int temp = Convert.ToInt32(command.ExecuteScalar());
+
+            closeConnection();
+
+            return temp;
+        }
+
+        public string getTempReviewer(string sqlQuery, int z)
+        {
+            SqlCommand command = new SqlCommand();
+            command.CommandType = CommandType.Text;
+            command.CommandText = sqlQuery;
+
+            command.Parameters.AddWithValue("@tempID", z);
+
+            openConnection();
+            command.Connection = connectionToDB;
+
+            string temp1;
+            temp1 = (String)command.ExecuteScalar();
+            // SqlDataReader reader = command.ExecuteReader();
+            //while (reader.Read())
+            //{
+            // temp1  = reader.GetString(0);
+            //}
+
+            closeConnection();
+            return temp1;
+        }
+
+        public string getTempPosition(string sqlQuery, int z)
+        {
+            SqlCommand command = new SqlCommand();
+            command.CommandType = CommandType.Text;
+            command.CommandText = sqlQuery;
+
+            command.Parameters.AddWithValue("@tempID", z);
+
+            openConnection();
+            command.Connection = connectionToDB;
+
+            string temp1;
+            temp1 = (String)command.ExecuteScalar();
+
+            closeConnection();
+            return temp1;
+        }
+
+        public int getTempSecID(string sqlQuery, int z)
+        {
+            SqlCommand command = new SqlCommand();
+            command.CommandType = CommandType.Text;
+            command.CommandText = sqlQuery;
+
+            command.Parameters.AddWithValue("@tempID", z);
+
+            openConnection();
+            command.Connection = connectionToDB;
+
+            int temp1 = Convert.ToInt32(command.ExecuteScalar());
+
+            closeConnection();
+            return temp1;
+        }
+
+        public string getTempSecTitle(string sqlQuery, int z)
+        {
+            SqlCommand command = new SqlCommand();
+            command.CommandType = CommandType.Text;
+            command.CommandText = sqlQuery;
+
+            command.Parameters.AddWithValue("@secID", z);
+
+            openConnection();
+            command.Connection = connectionToDB;
+
+            string temp1 = (String)command.ExecuteScalar();
+
+            closeConnection();
+            return temp1;
+        }
 
     }
 }
