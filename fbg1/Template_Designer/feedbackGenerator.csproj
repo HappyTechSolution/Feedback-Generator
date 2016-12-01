@@ -62,6 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="addToSection.cs" />
+    <Compile Include="Template.cs" />
     <Compile Include="Constants.cs" />
     <Compile Include="CreateNewOptions.cs" />
     <Compile Include="CreateNewTemplate.cs" />

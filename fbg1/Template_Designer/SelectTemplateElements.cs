@@ -48,14 +48,14 @@ namespace Template_Designer
         private void commentsCheckedListBox_SelectedIndexChanged(object sender, EventArgs e) // selected comment in checkBox displays in richTextBox
         {
 
-            
+
 
         }
 
 
         private void button2_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void previewReportButton_Click(object sender, EventArgs e)
@@ -64,18 +64,13 @@ namespace Template_Designer
             VF.ShowDialog();
         }
 
-        private void addCommentsButton_Click(object sender, EventArgs e) 
+        private void addCommentsButton_Click(object sender, EventArgs e)
         {
-            Constants c = new Constants();
-            foreach (string s in commentsCheckedListBox.CheckedItems.ToString())
-            {
-                c.addToComments(s);
-            }
-            
 
-
-            
-
+            //  Constants c = new Constants();
+            //foreach (string s in commentsCheckedListBox.CheckedItems)
+            //{
+            // c.addToComments(s);
         }
 
         private void viewCommentRichTextBox_TextChanged_1(object sender, EventArgs e)
@@ -89,3 +84,4 @@ namespace Template_Designer
         }
     }
 }
+
