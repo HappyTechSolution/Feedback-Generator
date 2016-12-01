@@ -24,8 +24,8 @@ namespace Template_Designer
         private void newSectionButton_Click(object sender, EventArgs e)
         {            
             Close();
-            enterSectionTitle est = new enterSectionTitle();
-            est.Show();
+            enterSectionTitle sectionTitleEnter = new enterSectionTitle();
+            sectionTitleEnter.Show();
         }
 
         private void cancelButton_Click(object sender, EventArgs e)
@@ -39,11 +39,9 @@ namespace Template_Designer
         }
 
         private void label1_Click(object sender, EventArgs e)
-        {
+        {    
 
-        
-
-        }   // reference [adding multiple text boxes] http://www.c-sharpcorner.com/blogs/generate-textbox-dynamically-at-runtime-in-windows-form-application1
+        }  
 
         private void AddCommentButton_Click(object sender, EventArgs e)
         {
