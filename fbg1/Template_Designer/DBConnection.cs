@@ -294,7 +294,7 @@ namespace Template_Designer
             return temp1;
         }
 
-        public int getTempSecID(string sqlQuery, int z)
+        public List<int> getTempSecID(string sqlQuery, int z)
         {
             SqlCommand command = new SqlCommand();
             command.CommandType = CommandType.Text;
@@ -305,13 +305,42 @@ namespace Template_Designer
             openConnection();
             command.Connection = connectionToDB;
 
-            int temp1 = Convert.ToInt32(command.ExecuteScalar());
+            List<int> temp1 = new List<int>();
+
+            using (var reader = command.ExecuteReader())
+            {
+                while (reader.Read())
+                    temp1.Add(reader.GetInt32(0));
+            }
 
             closeConnection();
             return temp1;
         }
 
-        public string getTempSecTitle(string sqlQuery, int z)
+        public List<string> getTempSecTitle(string sqlQuery, int z)
+        {
+            SqlCommand command = new SqlCommand();
+            command.CommandType = CommandType.Text;
+            command.CommandText = sqlQuery;
+
+            command.Parameters.AddWithValue("@tempID", z);
+
+            openConnection();
+            command.Connection = connectionToDB;
+
+            List<string> temp1 = new List<string>();
+
+            using (var reader = command.ExecuteReader())
+            {
+                while (reader.Read())
+                    temp1.Add(reader.GetString(0));
+            }
+
+            closeConnection();
+            return temp1;
+        }
+
+        public List<int> getTempOptID(string sqlQuery, int z)
         {
             SqlCommand command = new SqlCommand();
             command.CommandType = CommandType.Text;
@@ -322,7 +351,47 @@ namespace Template_Designer
             openConnection();
             command.Connection = connectionToDB;
 
-            string temp1 = (String)command.ExecuteScalar();
+            List<int> temp1 = new List<int>();
+
+            using (var reader = command.ExecuteReader())
+            {
+                while (reader.Read())
+                    temp1.Add(reader.GetInt32(0));
+            }
+
+            closeConnection();
+            return temp1;
+        }
+
+        public string getTempOptTitle(string sqlQuery, int z)
+        {
+            SqlCommand command = new SqlCommand();
+            command.CommandType = CommandType.Text;
+            command.CommandText = sqlQuery;
+
+            command.Parameters.AddWithValue("@optID", z);
+
+            openConnection();
+            command.Connection = connectionToDB;
+
+            string temp1 = command.ExecuteScalar().ToString();
+
+            closeConnection();
+            return temp1;
+        }
+
+        public string getTempOptComment(string sqlQuery, int z)
+        {
+            SqlCommand command = new SqlCommand();
+            command.CommandType = CommandType.Text;
+            command.CommandText = sqlQuery;
+
+            command.Parameters.AddWithValue("@optID", z);
+
+            openConnection();
+            command.Connection = connectionToDB;
+
+            string temp1 = command.ExecuteScalar().ToString();
 
             closeConnection();
             return temp1;

@@ -31,7 +31,12 @@ namespace Template_Designer
 
         //search for section details
         public static string searchSecID = "Select sectionID from createTemplateSections where templateID = @tempID";
-        public static string searchSecTitle = "Select sectionTitle from createTemplateSections where sectionID = @secID";
+        public static string searchSecTitle = "Select sectionTitle from createTemplateSections where templateID = @tempID";
+
+        //search option details
+        public static string searchOptID = "Select optionsID from createTemplateOptions where sectionsID = @secID";
+        public static string searchOptTitle = "Select optionsTitle from createTemplateOptions where optionsID = @optID";
+        public static string searchOptComment = "Select optionsComment from createTemplateOptions where optionsID = @optID";
 
         //variables to collect data from database if needed [currently filled with examples]
         public string sectionName;

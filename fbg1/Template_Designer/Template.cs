@@ -12,13 +12,12 @@ namespace Template_Designer
         private string templateName;
         private string templateReviewer;
         private string templatePosition;
-        private List<Sections> Secs;
-
-        class Sections
-        {
-            public int sectionID;
-            public string sectionTitle;
-        }
+        private List<int> sectionID;
+        private List<string> sectionTitle;
+        private List<int> optionID = new List<int>();
+        private List<string> optionTitle = new List<string>();
+        private List<string> optionComment = new List<string>();
+        
 
         public void getTName(string x)
         {
@@ -41,10 +40,44 @@ namespace Template_Designer
         {
             templatePosition = DBConnection.getDBConnectionToInstance().getTempPosition(Constants.searchTPos, templateID);
         }
-        
-        public void getSecs()
+
+        public void getSecIDs()
         {
-            Secs.Add(new Sections { sectionID = DBConnection.getDBConnectionToInstance().getTempSecID(Constants.searchSecID, templateID), sectionTitle = DBConnection.getDBConnectionToInstance().getTempSecTitle(Constants.searchSecTitle, DBConnection.getDBConnectionToInstance().getTempSecID(Constants.searchSecID, templateID)) });
+            sectionID = DBConnection.getDBConnectionToInstance().getTempSecID(Constants.searchSecID, templateID);
+        }
+
+        public void getSecTitles()
+        {
+            sectionTitle = DBConnection.getDBConnectionToInstance().getTempSecTitle(Constants.searchSecTitle, templateID);
+        }
+
+        public void getOptIDs()
+        {
+            List<int> a = new List<int>();
+            int count = sectionID.Count();
+            for (int i = 0; i < count; i++)
+            {
+                a = DBConnection.getDBConnectionToInstance().getTempOptID(Constants.searchOptID, sectionID[i]);
+                optionID.AddRange(a);
+            }
+        }
+
+        public void getOptTitles()
+        {
+            int count = optionID.Count;
+            for (int i = 0; i < count; i++)
+            {
+                optionTitle.Add( DBConnection.getDBConnectionToInstance().getTempOptTitle(Constants.searchOptTitle, optionID[i]));
+            }
+        }
+
+        public void getOptComments()
+        {
+            int count = optionID.Count();
+            for (int i = 0; i < count; i++)
+            {
+                optionComment.Add(DBConnection.getDBConnectionToInstance().getTempOptComment(Constants.searchOptComment, optionID[i]));
+            } 
         }
 
     }

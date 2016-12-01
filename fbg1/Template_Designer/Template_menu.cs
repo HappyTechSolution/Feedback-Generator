@@ -57,6 +57,11 @@ namespace Template_Designer
             T.getTID();
             T.getTReviewer();
             T.getTPosition();
+            T.getSecIDs();
+            T.getSecTitles();
+            T.getOptIDs();
+            T.getOptTitles();
+            T.getOptComments();
         }
 
       
