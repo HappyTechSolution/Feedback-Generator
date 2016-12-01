@@ -30,9 +30,9 @@ namespace Template_Designer
         }
 
         //Gets the SectionID and enters it into Variable
-        public int turn_to_SecID(int g)
+        public int turn_to_SecID(int ID)
         {
-            secID = g;
+            secID = ID;
             return secID;
         }
 

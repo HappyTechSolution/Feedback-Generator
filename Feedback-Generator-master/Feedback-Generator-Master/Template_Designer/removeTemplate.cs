@@ -18,18 +18,18 @@ namespace Template_Designer
             templateRemoveName = templateName;
         }
 
-        public void turn_to_Remove_ID(int g)
+        public void turn_to_Remove_ID(int tempTemplateID)
         {
-            tempID = g;
+            tempID = tempTemplateID;
         }
 
-        public void turn_to_Remove_Section_ID(List<int> g)
+        public void turn_to_Remove_Section_ID(List<int> tempSectionID)
         {
-            sectID = g;
+            sectID = tempSectionID;
         }
-        public void turn_to_Remove_Option_ID(List<int> g)
+        public void turn_to_Remove_Option_ID(List<int> tempOptionID)
         {
-            opID = g;
+            opID = tempOptionID;
         }
 
         public void getLatestRemoveTemplateID()

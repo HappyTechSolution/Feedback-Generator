@@ -69,7 +69,7 @@ namespace Template_Designer
 
 
         //Inserts the name, position and reviewer of the new template
-        public void insertTemplate(string sqlQuery, string x, string y, string z)
+        public void insertTemplate(string sqlQuery, string tempName, string tempReviewer, string tempPos)
         {
             //creates a connection to the sql command, converting the sql as text
             SqlCommand command = new SqlCommand();
@@ -77,9 +77,9 @@ namespace Template_Designer
             command.CommandText = sqlQuery;
 
             //Adds Variables into SQL Statement
-            command.Parameters.Add("templateNameOne", x);
-            command.Parameters.Add("templateReviewerOne", y);
-            command.Parameters.Add("templatePositionOne", z);
+            command.Parameters.Add("templateNameOne", tempName);
+            command.Parameters.Add("templateReviewerOne", tempReviewer);
+            command.Parameters.Add("templatePositionOne", tempPos);
 
             //Opens Connection to the Database.
             openConnection();
@@ -93,7 +93,7 @@ namespace Template_Designer
         }
 
         //A method to insert the section name and the current template ID
-        public void insertSectionTitle(string sqlQuery, string x, int y)
+        public void insertSectionTitle(string sqlQuery, string tempSection, int tempID)
         {
             //Create SQL Command object.
             SqlCommand command = new SqlCommand();
@@ -101,8 +101,8 @@ namespace Template_Designer
             command.CommandText = sqlQuery;
 
             //Adds Variables into SQL Statement
-            command.Parameters.AddWithValue("@templateID", y);
-            command.Parameters.AddWithValue("@sectionNameOne", x);
+            command.Parameters.AddWithValue("@templateID", tempID);
+            command.Parameters.AddWithValue("@sectionNameOne", tempSection);
 
             //Opens Connection to the Database.
             openConnection();
@@ -185,7 +185,7 @@ namespace Template_Designer
         }
 
         //A method to Insert Titles and Comments into Database.
-        public void insertOption(string sqlQuery, string y, string z, int x)
+        public void insertOption(string sqlQuery, string tempTitle, string tempComment, int tempSecID)
         {
             //Create SQL Command object.
             SqlCommand command = new SqlCommand();
@@ -193,9 +193,9 @@ namespace Template_Designer
             command.CommandText = sqlQuery;
 
             //Adds Options to SQL Query.
-            command.Parameters.AddWithValue("@secID", x);
-            command.Parameters.Add("optionTitleOne", y);
-            command.Parameters.Add("optionCommentOne", z);
+            command.Parameters.AddWithValue("@secID", tempSecID);
+            command.Parameters.Add("optionTitleOne", tempTitle);
+            command.Parameters.Add("optionCommentOne", tempComment);
 
             //Opens the Connection to the Database.
             openConnection();
@@ -375,7 +375,7 @@ namespace Template_Designer
          * and then deletes the rows associatied with the ID's from bottom to top
          * (options -> section -> template)*/
         //Gets the templateID of the template that the user wants to edit
-        public void getEditTemplateID(string sqlQuery, string Ename)
+        public void getEditTemplateID(string sqlQuery, string eName)
         {
             //Create SQL Command object.
             SqlCommand command = new SqlCommand();
@@ -384,7 +384,7 @@ namespace Template_Designer
             command.CommandText = sqlQuery;
 
             //adds the template name to the parameters.
-            command.Parameters.AddWithValue("@templateEditName", Ename);
+            command.Parameters.AddWithValue("@templateEditName", eName);
 
             //Opens Connection to the Database.
             openConnection();
@@ -499,10 +499,11 @@ namespace Template_Designer
             closeConnection();
         }
 
-        public static int rooff = 0;
+        public static int fillSectionIndex = 0;
 
         public void fillSection(string sqlQuery, int fillSID)
         {
+            //Creates new DataTable (dt)
             DataTable dt = new DataTable();
             SqlCommand command = new SqlCommand();
             command.CommandType = CommandType.Text;
@@ -512,20 +513,21 @@ namespace Template_Designer
             openConnection();
             command.Connection = connectionToDB;
 
+            //Set up new Data Adapter. (sqlDa)
             SqlDataAdapter sqlDa = new SqlDataAdapter(command);
             sqlDa.Fill(dt);
 
-            foreach (TextBox pop in editMenu.sectionTitleTextboxData)
+            foreach (TextBox fillSectionElement in editMenu.sectionTitleTextboxData)
             {
-                pop.Text = dt.Rows[rooff]["sectionTitle"].ToString();
-                pop.Tag = pop.Text;
-                rooff += 1;
+                fillSectionElement.Text = dt.Rows[fillSectionIndex]["sectionTitle"].ToString();
+                fillSectionElement.Tag = fillSectionElement.Text;
+                fillSectionIndex += 1;
             }   
 
             closeConnection();
         }
 
-        public static int god = 0;
+        public static int optionTitleIndex = 0;
 
         public void fillOptionTitle(string sqlQuery, int fillOID)
         {
@@ -541,14 +543,14 @@ namespace Template_Designer
             SqlDataAdapter sqlDa = new SqlDataAdapter(command);
             sqlDa.Fill(dt);
 
-            editMenu.optionTitleTextboxData[god].Text = dt.Rows[0]["optionsTitle"].ToString();
+            editMenu.optionTitleTextboxData[optionTitleIndex].Text = dt.Rows[0]["optionsTitle"].ToString();
 
-            god += 1;
+            optionTitleIndex += 1;
 
             closeConnection();
         }
 
-        public static int dog = 0;
+        public static int optionCommentIndex = 0;
 
         public void fillOptionComment(string sqlQuery, int fillOID)
         {
@@ -564,29 +566,29 @@ namespace Template_Designer
             SqlDataAdapter sqlDa = new SqlDataAdapter(command);
             sqlDa.Fill(dt);
 
-            editMenu.optionCommentTextboxData[dog].Text = dt.Rows[0]["optionsComment"].ToString();
+            editMenu.optionCommentTextboxData[optionCommentIndex].Text = dt.Rows[0]["optionsComment"].ToString();
 
-            dog += 1;
+            optionCommentIndex += 1;
 
             closeConnection();
         }
 
         public void makeTemplateOption(string sqlQuery, int sID)
         {
-            SqlCommand command2 = new SqlCommand();
-            command2.CommandType = CommandType.Text;
-            command2.CommandText = sqlQuery;
-            editMenu test2 = new editMenu();
-            command2.Parameters.AddWithValue("@sectID", sID);
+            SqlCommand command = new SqlCommand();
+            command.CommandType = CommandType.Text;
+            command.CommandText = sqlQuery;
+            editMenu menuEdit = new editMenu();
+            command.Parameters.AddWithValue("@sectID", sID);
 
             openConnection();
-            command2.Connection = connectionToDB;
+            command.Connection = connectionToDB;
 
-            using (SqlDataReader fillRead = command2.ExecuteReader())
+            using (SqlDataReader fillRead = command.ExecuteReader())
             {
                 while (fillRead.Read())
                 {
-                    test2.createFillEditOption();
+                    menuEdit.createFillEditOption();
                 }
             }
 
@@ -641,7 +643,7 @@ namespace Template_Designer
             closeConnection();
         }
 
-        public static int secTit = 0;
+        public static int updateSectionTitleIndex = 0;
 
         public void updateSectionTitle(string sqlQuery, int SID)
         {
@@ -649,7 +651,7 @@ namespace Template_Designer
             command.CommandType = CommandType.Text;
             command.CommandText = sqlQuery;
             command.Parameters.AddWithValue("@sectID", SID);
-            command.Parameters.AddWithValue("@NewSectionTitle", editMenu.sectionTitleTextboxData[secTit].Text);
+            command.Parameters.AddWithValue("@NewSectionTitle", editMenu.sectionTitleTextboxData[updateSectionTitleIndex].Text);
 
             openConnection();
             command.Connection = connectionToDB;
@@ -659,7 +661,7 @@ namespace Template_Designer
             closeConnection();
         }
 
-        public static int optTit = 0;
+        public static int updateOptionTitleIndex = 0;
 
         public void updateOptionsTitle(string sqlQuery, int OID)
         {
@@ -667,7 +669,7 @@ namespace Template_Designer
             command.CommandType = CommandType.Text;
             command.CommandText = sqlQuery;
             command.Parameters.AddWithValue("@opID", OID);
-            command.Parameters.AddWithValue("@NewOptionTitle", editMenu.optionTitleTextboxData[optTit].Text);
+            command.Parameters.AddWithValue("@NewOptionTitle", editMenu.optionTitleTextboxData[updateOptionTitleIndex].Text);
 
             openConnection();
             command.Connection = connectionToDB;
@@ -677,7 +679,7 @@ namespace Template_Designer
             closeConnection();
         }
 
-        public static int optComment = 0;
+        public static int updateCommentIndex = 0;
 
         public void updateOptionsComment(string sqlQuery, int OID)
         {
@@ -685,7 +687,7 @@ namespace Template_Designer
             command.CommandType = CommandType.Text;
             command.CommandText = sqlQuery;
             command.Parameters.AddWithValue("@opID", OID);
-            command.Parameters.AddWithValue("@NewOptionComment", editMenu.optionCommentTextboxData[optComment].Text);
+            command.Parameters.AddWithValue("@NewOptionComment", editMenu.optionCommentTextboxData[updateCommentIndex].Text);
 
             openConnection();
             command.Connection = connectionToDB;

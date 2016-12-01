@@ -23,9 +23,9 @@ namespace Template_Designer
             DBConnection.getDBConnectionToInstance().getEditTemplateID(Constants.getEditTemplateID, templateEditName);
         }
 
-        public void turn_to_Edit_ID(int g)
+        public void turn_to_Edit_ID(int tempID)
         {
-            tempEditID = g;
+            tempEditID = tempID;
         }
 
         public void getLatestEditSectionID()
@@ -33,9 +33,9 @@ namespace Template_Designer
             DBConnection.getDBConnectionToInstance().getEditSectionID(Constants.getEditSectionID, tempEditID);
         }
 
-        public void turn_to_Edit_Section_ID(List<int> g)
+        public void turn_to_Edit_Section_ID(List<int> tempSectID)
         {
-            sectID = g;
+            sectID = tempSectID;
         }
 
         public void getLastestEditOptionsID()
@@ -47,9 +47,9 @@ namespace Template_Designer
             }
         }
 
-        public void turn_to_Edit_Option_ID(List<int> g)
+        public void turn_to_Edit_Option_ID(List<int> tempOptionID)
         {
-            opID = g;
+            opID = tempOptionID;
         }
     }
 }

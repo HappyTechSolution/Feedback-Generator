@@ -24,9 +24,9 @@ namespace Template_Designer
         }
 
         //turn_to_ID takes the TemplateID adding it to the Class Variable.
-        public int turn_to_ID(int g)
+        public int turn_to_ID(int ID)
         {
-            tempID = g;
+            tempID = ID;
             return tempID;
         }
 

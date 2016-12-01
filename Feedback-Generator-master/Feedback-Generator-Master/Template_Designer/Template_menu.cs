@@ -19,8 +19,8 @@ namespace Template_Designer
         // When create new template button clicked: open 'CreateTemplate' class
         private void createNewTemplate_button_Click(object sender, EventArgs e)
         {
-            CreateTemplate CP = new CreateTemplate();
-            CP.ShowDialog();
+            CreateTemplate CT = new CreateTemplate();
+            CT.ShowDialog();
         }
 
         private void TemplateSelector_Load(object sender, EventArgs e)
@@ -30,14 +30,13 @@ namespace Template_Designer
             cbCl.DisplayMember = "templateName";
             // TODO: This line of code loads data into the 'templateNameDataSet.createTemplate' table. You can move, or remove it, as needed.
             this.createTemplateTableAdapter.Fill(this.templateNameDataSet.createTemplate);
-
         }
 
         private void Edit_button_Click(object sender, EventArgs e)
         {
             editTemplate edit = new editTemplate();
             editMenu fillEdit = new editMenu();
-            edit.addEditTemplateName(comboBox1.Text);
+            edit.addEditTemplateName(cbCl.Text);
             edit.getLatestEditTemplateID();
             edit.getLatestEditSectionID();
             edit.getLastestEditOptionsID();
@@ -49,29 +48,19 @@ namespace Template_Designer
             fillEdit.ShowDialog();
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            foreach (Control ctl in this.Controls)
-            {
-                ctl.ResetBindings();
-            }
-        }
-
         private void Remove_button_Click(object sender, EventArgs e)
         {
             removeTemplate remove = new removeTemplate();
             removeTemplateWarning removeWarning = new removeTemplateWarning();
-            remove.addTemplateName(comboBox1.Text);
+            remove.addTemplateName(cbCl.Text);
             removeWarning.ShowDialog();
         }
 
-        private void TemplateSelector_Enter(object sender, EventArgs e)
+        public void TemplateSelector_GotFocus(object sender, EventArgs e)
         {
-            MessageBox.Show("Focus");
-            DataSet clDs = DBConnection.getDBConnectionToInstance().getDataSet("SELECT TemplateName FROM CreateTemplate");
-            cbCl.DataSource = clDs.Tables[0];
-            cbCl.DisplayMember = "templateName";
-
-         }
+           DataSet clDs = DBConnection.getDBConnectionToInstance().getDataSet("SELECT TemplateName FROM CreateTemplate");
+           cbCl.DataSource = clDs.Tables[0];
+           cbCl.DisplayMember = "templateName";
+         }   
     }
 }

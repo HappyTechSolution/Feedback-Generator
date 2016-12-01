@@ -26,7 +26,6 @@ namespace Template_Designer
 
             //set up the data grid view
             dataGridView1.DataSource = table;
-
         }
 
         private void viewDatabase_Load(object sender, EventArgs e)
@@ -35,7 +34,6 @@ namespace Template_Designer
             this.createTemplateTableAdapter.Fill(this.feedbackGeneratorDBDataSet1.createTemplate);
             // TODO: This line of code loads data into the 'feedbackGeneratorDBDataSet.createTemplateFeedbackType' table. You can move, or remove it, as needed.
             this.createTemplateFeedbackTypeTableAdapter.Fill(this.feedbackGeneratorDBDataSet.createTemplateFeedbackType);
-
         }
     }
 }

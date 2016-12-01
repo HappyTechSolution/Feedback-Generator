@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.createTemplateBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.templateNameDataSet = new Template_Designer.templateNameDataSet();
             this.Remove_button = new System.Windows.Forms.Button();
@@ -54,19 +53,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Create/Modify templates";
             // 
-            // comboBox1
-            // 
-            this.comboBox1.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.createTemplateBindingSource, "templateName", true));
-            this.comboBox1.DataSource = this.createTemplateBindingSource;
-            this.comboBox1.DisplayMember = "templateName";
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(19, 48);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(232, 21);
-            this.comboBox1.TabIndex = 1;
-            this.comboBox1.ValueMember = "templateName";
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
-            // 
             // createTemplateBindingSource
             // 
             this.createTemplateBindingSource.DataMember = "createTemplate";
@@ -89,7 +75,7 @@
             // 
             // Edit_button
             // 
-            this.Edit_button.Location = new System.Drawing.Point(103, 76);
+            this.Edit_button.Location = new System.Drawing.Point(158, 76);
             this.Edit_button.Name = "Edit_button";
             this.Edit_button.Size = new System.Drawing.Size(75, 23);
             this.Edit_button.TabIndex = 3;
@@ -99,7 +85,7 @@
             // 
             // createNewTemplate_button
             // 
-            this.createNewTemplate_button.Location = new System.Drawing.Point(197, 149);
+            this.createNewTemplate_button.Location = new System.Drawing.Point(262, 153);
             this.createNewTemplate_button.Name = "createNewTemplate_button";
             this.createNewTemplate_button.Size = new System.Drawing.Size(75, 23);
             this.createNewTemplate_button.TabIndex = 4;
@@ -109,7 +95,7 @@
             // 
             // back_button
             // 
-            this.back_button.Location = new System.Drawing.Point(13, 149);
+            this.back_button.Location = new System.Drawing.Point(21, 149);
             this.back_button.Name = "back_button";
             this.back_button.Size = new System.Drawing.Size(75, 23);
             this.back_button.TabIndex = 5;
@@ -128,7 +114,7 @@
             // cbCl
             // 
             this.cbCl.FormattingEnabled = true;
-            this.cbCl.Location = new System.Drawing.Point(257, 48);
+            this.cbCl.Location = new System.Drawing.Point(13, 49);
             this.cbCl.Name = "cbCl";
             this.cbCl.Size = new System.Drawing.Size(277, 21);
             this.cbCl.TabIndex = 6;
@@ -137,17 +123,16 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(546, 312);
+            this.ClientSize = new System.Drawing.Size(349, 188);
             this.Controls.Add(this.cbCl);
             this.Controls.Add(this.back_button);
             this.Controls.Add(this.createNewTemplate_button);
             this.Controls.Add(this.Edit_button);
             this.Controls.Add(this.Remove_button);
-            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label1);
             this.Name = "TemplateSelector";
             this.Load += new System.EventHandler(this.TemplateSelector_Load);
-            this.Click += new System.EventHandler(this.TemplateSelector_Enter);
+            this.Click += new System.EventHandler(this.TemplateSelector_GotFocus);
             ((System.ComponentModel.ISupportInitialize)(this.createTemplateBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.templateNameDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.templateNameDataSetBindingSource)).EndInit();
@@ -159,7 +144,6 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button Remove_button;
         private System.Windows.Forms.Button Edit_button;
         private System.Windows.Forms.Button createNewTemplate_button;
@@ -168,7 +152,7 @@
         public System.Windows.Forms.BindingSource createTemplateBindingSource;
         private templateNameDataSetTableAdapters.createTemplateTableAdapter createTemplateTableAdapter;
         private System.Windows.Forms.BindingSource templateNameDataSetBindingSource;
-        private System.Windows.Forms.ComboBox cbCl;
+        public System.Windows.Forms.ComboBox cbCl;
     }
 }
 

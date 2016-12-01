@@ -40,12 +40,12 @@ namespace Template_Designer
         static int optionCommentNum = 197;
         static int optionCommentNumData = 178;
 
-        static int a = 0;
-        static int b = 0;
+        static int sectionTextBoxCount = 0;
+        static int optionsTextBoxCount = 0;
 
-        static int testttttt = 0;
+        static int optionCount = 0;
 
-        //public static int secTit = 0;
+        //public static int updateSectionTitleIndex = 0;
 
         //public static Control ctr;
 
@@ -97,7 +97,7 @@ namespace Template_Designer
 
                 sectionTextbox.Left = 74;
                 sectionTextbox.Top = sectionTitleNum;
-                sectionTextbox.Name = string.Format("SectionTitleTB {0}", a);
+                sectionTextbox.Name = string.Format("SectionTitleTB {0}", sectionTextBoxCount);
                 sectionTextbox.Size = new System.Drawing.Size(100, 20);
                 sectionTextbox.Text = "Section title";
                 this.Controls.Add(sectionTextbox);
@@ -106,49 +106,49 @@ namespace Template_Designer
 
                 sectionTextboxData.Left = 202;
                 sectionTextboxData.Top = sectionTitleDataNum;
-                sectionTextboxData.Name = string.Format("SectionTitleData {0}", a);
+                sectionTextboxData.Name = string.Format("SectionTitleData {0}", sectionTextBoxCount);
                 sectionTextboxData.Size = new System.Drawing.Size(180, 20);
                 this.Controls.Add(sectionTextboxData);
                 sectionTitleTextboxData.Add(sectionTextboxData);
                 sectionTextboxData.BringToFront();
 
-                a += 1;
+                sectionTextBoxCount += 1;
 
                 createEditOption();
             }
 
-            foreach (TextBox hell in optionTitleTextbox)
+            foreach (TextBox optionsTitleElement in optionTitleTextbox)
             {
-                this.Controls.Add(hell);
-                hell.BringToFront();
+                this.Controls.Add(optionsTitleElement);
+                optionsTitleElement.BringToFront();
             }
 
-            foreach (TextBox hell2 in optionTitleTextboxData)
+            foreach (TextBox optionsTitleDataElement in optionTitleTextboxData)
             {
-                this.Controls.Add(hell2);
-                hell2.BringToFront();
+                this.Controls.Add(optionsTitleDataElement);
+                optionsTitleDataElement.BringToFront();
             }
 
-            foreach (TextBox hell3 in optionCommentTextbox)
+            foreach (TextBox optionsCommentElement in optionCommentTextbox)
             {
-                this.Controls.Add(hell3);
-                hell3.BringToFront();
+                this.Controls.Add(optionsCommentElement);
+                optionsCommentElement.BringToFront();
             }
 
-            foreach (TextBox hell4 in optionCommentTextboxData)
+            foreach (TextBox optionsCommentDataElement in optionCommentTextboxData)
             {
-                this.Controls.Add(hell4);
-                hell4.BringToFront();
+                this.Controls.Add(optionsCommentDataElement);
+                optionsCommentDataElement.BringToFront();
             }
 
-            testttttt = 0;
+            optionCount = 0;
 
         }
 
         public void createEditOption()
         {
-            DBConnection.getDBConnectionToInstance().makeTemplateOption(Constants.SQLCreateEditOption, editTemplate.sectID[testttttt]);
-            testttttt += 1;
+            DBConnection.getDBConnectionToInstance().makeTemplateOption(Constants.SQLCreateEditOption, editTemplate.sectID[optionCount]);
+            optionCount += 1;
         }
 
         public void createFillEditOption()
@@ -158,14 +158,14 @@ namespace Template_Designer
 
             optionTitleText.Left = 144;
             optionTitleText.Top = optionTitleNum;
-            optionTitleText.Name = string.Format("OptionTitleTB {0}", b);
+            optionTitleText.Name = string.Format("OptionTitleTB {0}", optionsTextBoxCount);
             optionTitleText.Size = new System.Drawing.Size(100, 20);
             optionTitleText.Text = "Option title";
             optionTitleTextbox.Add(optionTitleText);
 
             optionTitleTextData.Left = 271;
             optionTitleTextData.Top = optionTitleDataNum;
-            optionTitleTextData.Name = string.Format("OptionTitleData {0}", b);
+            optionTitleTextData.Name = string.Format("OptionTitleData {0}", optionsTextBoxCount);
             optionTitleTextData.Size = new System.Drawing.Size(180, 20);
             optionTitleTextboxData.Add(optionTitleTextData);
 
@@ -174,7 +174,7 @@ namespace Template_Designer
 
             optionCommentText.Left = 144;
             optionCommentText.Top = optionCommentNum;
-            optionCommentText.Name = string.Format("OptionCommentTB {0}", b);
+            optionCommentText.Name = string.Format("OptionCommentTB {0}", optionsTextBoxCount);
             optionCommentText.Size = new System.Drawing.Size(100, 20);
             optionCommentText.Text = "Option comment";
             optionCommentTextbox.Add(optionCommentText);
@@ -182,7 +182,7 @@ namespace Template_Designer
             optCommentData.Left = 271;
             optCommentData.Top = optionCommentNumData;
             optCommentData.Multiline = true;
-            optCommentData.Name = string.Format("OptionCommentDB {0}", b);
+            optCommentData.Name = string.Format("OptionCommentDB {0}", optionsTextBoxCount);
             optCommentData.Size = new System.Drawing.Size(142, 59);
             optionCommentTextboxData.Add(optCommentData);
 
@@ -193,7 +193,7 @@ namespace Template_Designer
             optionCommentNumData += 130;
             optionCommentNum += 130;
 
-            b += 1;
+            optionsTextBoxCount += 1;
         }
 
         public void fillEditTemplate()
@@ -226,8 +226,6 @@ namespace Template_Designer
         {
             wasChanged();
             cleanStart();
-       //     TemplateSelector test = new TemplateSelector();
-        //    test.createTemplateBindingSource.ResetBindings(true);
             this.Close();
         }
 
@@ -250,40 +248,40 @@ namespace Template_Designer
 
             foreach (int update in editTemplate.sectID)
             {
-                if ((string)sectionTitleTextboxData[DBConnection.secTit].Tag != sectionTitleTextboxData[DBConnection.secTit].Text)
+                if ((string)sectionTitleTextboxData[DBConnection.updateSectionTitleIndex].Tag != sectionTitleTextboxData[DBConnection.updateSectionTitleIndex].Text)
                 {
                     DBConnection.getDBConnectionToInstance().updateSectionTitle(Constants.SQLUpdateSectionTitle, update);
-                    DBConnection.secTit += 1;
+                    DBConnection.updateSectionTitleIndex += 1;
                 }
                 else
                 {
-                    DBConnection.secTit += 1;
+                    DBConnection.updateSectionTitleIndex += 1;
                 }
             }
 
             foreach (int update in editTemplate.opID)
             {
-                if ((string)optionTitleTextboxData[DBConnection.optTit].Tag != optionTitleTextboxData[DBConnection.optTit].Text)
+                if ((string)optionTitleTextboxData[DBConnection.updateOptionTitleIndex].Tag != optionTitleTextboxData[DBConnection.updateOptionTitleIndex].Text)
                 {
                     DBConnection.getDBConnectionToInstance().updateOptionsTitle(Constants.SQLUpdateOptionsTitle, update);
-                    DBConnection.optTit += 1;
+                    DBConnection.updateOptionTitleIndex += 1;
                 }
                 else
                 {
-                    DBConnection.optTit += 1;
+                    DBConnection.updateOptionTitleIndex += 1;
                 }
             }
 
             foreach (int update in editTemplate.opID)
             {
-                if ((string)optionCommentTextboxData[DBConnection.optComment].Tag != optionCommentTextboxData[DBConnection.optComment].Text)
+                if ((string)optionCommentTextboxData[DBConnection.updateCommentIndex].Tag != optionCommentTextboxData[DBConnection.updateCommentIndex].Text)
                 {
                     DBConnection.getDBConnectionToInstance().updateOptionsComment(Constants.SQLUpdateOptionsComment, update);
-                    DBConnection.optComment += 1;
+                    DBConnection.updateCommentIndex += 1;
                 }
                 else
                 {
-                    DBConnection.optComment += 1;
+                    DBConnection.updateCommentIndex += 1;
                 }
             }
         }
@@ -315,8 +313,8 @@ namespace Template_Designer
             optionCommentNum = 197;
             optionCommentNumData = 178;
 
-            a = 0;
-            b = 0;
+            sectionTextBoxCount = 0;
+            optionsTextBoxCount = 0;
 
             editTemplate.opID.Clear();
             editTemplate.sectID.Clear();
@@ -324,16 +322,15 @@ namespace Template_Designer
             editTemplate.templateEditName = null;
 
             DBConnection.optionOriginalEditID.Clear();
-            DBConnection.secTit = 0;
+            DBConnection.updateSectionTitleIndex = 0;
             DBConnection.sectOriginalEditID.Clear();
-            DBConnection.rooff = 0;
-            DBConnection.god = 0;
-            DBConnection.dog = 0;
+            DBConnection.fillSectionIndex = 0;
+            DBConnection.optionTitleIndex = 0;
+            DBConnection.optionCommentIndex = 0;
 
-            DBConnection.optTit = 0;
-            DBConnection.optComment = 0;
+            DBConnection.updateOptionTitleIndex = 0;
+            DBConnection.updateCommentIndex = 0;
 
         }
     }
-
 }

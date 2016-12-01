@@ -21,33 +21,22 @@ namespace Template_Designer
             //Confirm Button Click.
             
             CreateNewTemplate input = new CreateNewTemplate();
-            input.addTemplateName(textBox1.Text);
-            input.addTemplateReviewer(textBox2.Text);
-            input.addTemplatePosition(textBox3.Text);
-            input.addTemplateFeedbackType(selectFeedbackTypeBox.Text);
+            input.addTemplateName(textBoxTemplateName.Text);
+            input.addTemplateReviewer(textBoxTemplateReviewer.Text);
+            input.addTemplatePosition(textBoxTemplatePosition.Text);
+            input.addTemplateFeedbackType(comboBoxSelectFeedbackTypeBox.Text);
             input.writeTemplateDetailsToDB();
-            updateGridView();
-            enterSectionTitle est = new enterSectionTitle();
-            est.Show();
+            enterSectionTitle sectionTitleEnter = new enterSectionTitle();
+            sectionTitleEnter.Show();
         }
 
         private void CreateTemplate_Load(object sender, EventArgs e)
         {
+            //Unused code.
             // TODO: This line of code loads data into the 'feedbackGeneratorDBDataSet.createTemplateFeedbackType' table. You can move, or remove it, as needed.
             this.createTemplateFeedbackTypeTableAdapter.Fill(this.feedbackGeneratorDBDataSet.createTemplateFeedbackType);
-            updateGridView();
-        }
-
-        /*
- * Update the GridView
- */
-        public void updateGridView()
-        {
-
-
 
         }
-
 
         private void templateName_TextChanged(object sender, EventArgs e)
         {
@@ -69,16 +58,5 @@ namespace Template_Designer
             //Template Feedback Input Box.
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void viewDatabase_Click(object sender, EventArgs e)
-        {
-            viewDatabase view = new viewDatabase();
-            view.ShowDialog();
-            
-        }
     }
 }
