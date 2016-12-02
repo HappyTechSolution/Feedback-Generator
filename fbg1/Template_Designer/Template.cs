@@ -12,11 +12,12 @@ namespace Template_Designer
         private string templateName;
         private string templateReviewer;
         private string templatePosition;
-        private List<int> sectionID;
-        private List<string> sectionTitle;
+        public static List<int> sectionID;
+        public static List<string> sectionTitle;
         private List<int> optionID = new List<int>();
-        private List<string> optionTitle = new List<string>();
-        private List<string> optionComment = new List<string>();
+        public static List<string> optionTitle = new List<string>();
+        public static List<string> optionComment = new List<string>();
+        public static List<int> optionsCount = new List<int>();
         
 
         public void getTName(string x)
@@ -58,6 +59,7 @@ namespace Template_Designer
             for (int i = 0; i < count; i++)
             {
                 a = DBConnection.getDBConnectionToInstance().getTempOptID(Constants.searchOptID, sectionID[i]);
+                optionsCount.Add(a.Count());
                 optionID.AddRange(a);
             }
         }

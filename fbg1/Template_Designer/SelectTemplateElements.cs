@@ -12,15 +12,29 @@ namespace Template_Designer
 {
     public partial class SelectTemplateElements : Form
     {
+        int sectionCount = 0;
+        int optionCount = 0;
+
         public SelectTemplateElements()
         {
             InitializeComponent();
-            Constants c = new Constants();
+            //Constants c = new Constants();
+            loadOptions();
+             //adds comments to checkedListBox from comment array
 
-            commentsCheckedListBox.Items.AddRange(c.comments); //adds comments to checkedListBox from comment array
+          
+            sectionNameLabel.Text = Template.sectionTitle[sectionCount];
 
 
 
+        }
+        public void loadOptions()
+        {
+            //Template.optionsCount[optionCount];
+            for(int i = 0; i < Template.optionsCount[optionCount]; i++)
+            {
+                commentsCheckedListBox.Items.Add(Template.optionTitle[i]);
+            }
         }
 
         private void SelectTemplateElements_Load(object sender, EventArgs e)
@@ -37,7 +51,7 @@ namespace Template_Designer
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            
         }
 
         private void viewCommentRichTextBox_TextChanged(object sender, EventArgs e)
@@ -67,10 +81,24 @@ namespace Template_Designer
         private void addCommentsButton_Click(object sender, EventArgs e)
         {
 
-            //  Constants c = new Constants();
-            //foreach (string s in commentsCheckedListBox.CheckedItems)
-            //{
-            // c.addToComments(s);
+            sectionCount++;
+            if(sectionCount == Template.sectionID.Count())
+            {
+                this.Close();
+            }
+            else
+            {
+                sectionNameLabel.Text = Template.sectionTitle[sectionCount];
+            }
+            
+            
+
+            
+            
+            
+            
+            
+
         }
 
         private void viewCommentRichTextBox_TextChanged_1(object sender, EventArgs e)

@@ -73,9 +73,8 @@
             this.sectionNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sectionNameLabel.Location = new System.Drawing.Point(13, 13);
             this.sectionNameLabel.Name = "sectionNameLabel";
-            this.sectionNameLabel.Size = new System.Drawing.Size(86, 13);
+            this.sectionNameLabel.Size = new System.Drawing.Size(0, 13);
             this.sectionNameLabel.TabIndex = 15;
-            this.sectionNameLabel.Text = "Section Name";
             // 
             // viewCommentRichTextBox
             // 
