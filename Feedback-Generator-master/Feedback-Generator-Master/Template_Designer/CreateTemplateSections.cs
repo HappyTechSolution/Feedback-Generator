@@ -28,9 +28,11 @@ namespace Template_Designer
             sectionTitleEnter.Show();
         }
 
-        private void cancelButton_Click(object sender, EventArgs e)
+        private void FinishButton_Click(object sender, EventArgs e)
         {
-            this.Close(); 
+            TemplateSelector show = new TemplateSelector();
+            show.Visible = true;
+            this.Close();
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -64,6 +66,16 @@ namespace Template_Designer
         private void titleTextBox_TextChanged(object sender, EventArgs e)
         {
             //options comment text box
+        }
+
+        private void CreateTemplateSections_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CreateTemplateSections_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            e.Cancel = true;
         }
     }
 

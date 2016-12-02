@@ -19,6 +19,7 @@ namespace Template_Designer
         // When create new template button clicked: open 'CreateTemplate' class
         private void createNewTemplate_button_Click(object sender, EventArgs e)
         {
+            this.Hide();
             CreateTemplate CT = new CreateTemplate();
             CT.ShowDialog();
         }
@@ -34,6 +35,7 @@ namespace Template_Designer
 
         private void Edit_button_Click(object sender, EventArgs e)
         {
+            this.Hide();
             editTemplate edit = new editTemplate();
             editMenu fillEdit = new editMenu();
             edit.addEditTemplateName(cbCl.Text);
@@ -46,6 +48,7 @@ namespace Template_Designer
             fillEdit.fillEditOption();
             fillEdit.fillEditOptionComment();
             fillEdit.ShowDialog();
+
         }
 
         private void Remove_button_Click(object sender, EventArgs e)
@@ -53,6 +56,7 @@ namespace Template_Designer
             removeTemplate remove = new removeTemplate();
             removeTemplateWarning removeWarning = new removeTemplateWarning();
             remove.addTemplateName(cbCl.Text);
+            this.Hide();
             removeWarning.ShowDialog();
         }
 
@@ -61,6 +65,11 @@ namespace Template_Designer
            DataSet clDs = DBConnection.getDBConnectionToInstance().getDataSet("SELECT TemplateName FROM CreateTemplate");
            cbCl.DataSource = clDs.Tables[0];
            cbCl.DisplayMember = "templateName";
-         }   
+         }
+
+        private void back_button_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

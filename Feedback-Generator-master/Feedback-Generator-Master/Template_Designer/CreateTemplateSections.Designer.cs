@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
+            this.finishButton = new System.Windows.Forms.Button();
             this.AddSectionButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -37,21 +37,21 @@
             this.AddCommentButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // button1
+            // finishButton
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button1.Location = new System.Drawing.Point(13, 299);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Cancel";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.cancelButton_Click);
+            this.finishButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.finishButton.Location = new System.Drawing.Point(474, 299);
+            this.finishButton.Name = "finishButton";
+            this.finishButton.Size = new System.Drawing.Size(75, 23);
+            this.finishButton.TabIndex = 0;
+            this.finishButton.Text = "Finish";
+            this.finishButton.UseVisualStyleBackColor = true;
+            this.finishButton.Click += new System.EventHandler(this.FinishButton_Click);
             // 
             // AddSectionButton
             // 
             this.AddSectionButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.AddSectionButton.Location = new System.Drawing.Point(346, 299);
+            this.AddSectionButton.Location = new System.Drawing.Point(208, 299);
             this.AddSectionButton.Name = "AddSectionButton";
             this.AddSectionButton.Size = new System.Drawing.Size(104, 23);
             this.AddSectionButton.TabIndex = 1;
@@ -97,7 +97,7 @@
             // AddCommentButton
             // 
             this.AddCommentButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.AddCommentButton.Location = new System.Drawing.Point(228, 299);
+            this.AddCommentButton.Location = new System.Drawing.Point(72, 299);
             this.AddCommentButton.Name = "AddCommentButton";
             this.AddCommentButton.Size = new System.Drawing.Size(112, 23);
             this.AddCommentButton.TabIndex = 8;
@@ -116,9 +116,11 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.AddSectionButton);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.finishButton);
             this.Name = "CreateTemplateSections";
             this.Text = "CreateTemplateSections";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CreateTemplateSections_FormClosing);
+            this.Load += new System.EventHandler(this.CreateTemplateSections_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -126,7 +128,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button finishButton;
         private System.Windows.Forms.Button AddSectionButton;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;

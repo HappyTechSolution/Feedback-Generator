@@ -224,9 +224,12 @@ namespace Template_Designer
 
         private void saveButton_Click(object sender, EventArgs e)
         {
+           TemplateSelector test = new TemplateSelector();
             wasChanged();
             cleanStart();
             this.Close();
+            test.Visible = true;
+                                  
         }
 
         public void wasChanged()
