@@ -305,7 +305,6 @@ C:\Users\ezdon\Documents\Visual Studio 2015\Projects\Feedback-Generator-UserStor
 C:\Users\ezdon\Documents\Visual Studio 2015\Projects\Feedback-Generator-UserStoryTwo\fbg1\Template_Designer\obj\Debug\Template_Designer.viewDatabase.resources
 C:\Users\ezdon\Documents\Visual Studio 2015\Projects\Feedback-Generator-UserStoryTwo\fbg1\Template_Designer\obj\Debug\Template_Designer.ViewFeedback.resources
 C:\Users\ezdon\Documents\Visual Studio 2015\Projects\Feedback-Generator-UserStoryTwo\fbg1\Template_Designer\obj\Debug\feedbackGenerator.csproj.GenerateResource.Cache
-<<<<<<< HEAD
 C:\Users\kummy\Downloads\Feedback-Generator-UserStoryTwo (4)\Feedback-Generator-UserStoryTwo\fbg1\Template_Designer\bin\Debug\Template_Designer.exe.config
 C:\Users\kummy\Downloads\Feedback-Generator-UserStoryTwo (4)\Feedback-Generator-UserStoryTwo\fbg1\Template_Designer\obj\Debug\Template_Designer.exe
 C:\Users\kummy\Downloads\Feedback-Generator-UserStoryTwo (4)\Feedback-Generator-UserStoryTwo\fbg1\Template_Designer\obj\Debug\Template_Designer.pdb
@@ -324,5 +323,3 @@ C:\Users\kummy\Downloads\Feedback-Generator-UserStoryTwo (4)\Feedback-Generator-
 C:\Users\kummy\Downloads\Feedback-Generator-UserStoryTwo (4)\Feedback-Generator-UserStoryTwo\fbg1\Template_Designer\obj\Debug\Template_Designer.viewDatabase.resources
 C:\Users\kummy\Downloads\Feedback-Generator-UserStoryTwo (4)\Feedback-Generator-UserStoryTwo\fbg1\Template_Designer\obj\Debug\Template_Designer.ViewFeedback.resources
 C:\Users\kummy\Downloads\Feedback-Generator-UserStoryTwo (4)\Feedback-Generator-UserStoryTwo\fbg1\Template_Designer\obj\Debug\feedbackGenerator.csproj.GenerateResource.Cache
-=======
->>>>>>> 8f7e52aa6e8de6edf4cc874015767d490a90d89b

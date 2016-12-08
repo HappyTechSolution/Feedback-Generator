@@ -12,13 +12,8 @@ namespace Template_Designer
 {
     public partial class SelectTemplateElements : Form
     {
-<<<<<<< HEAD
         int optionCount = 0;
         int sectionCount = 0;
-=======
-        int sectionCount = 0;
-        int optionCount = 0;
->>>>>>> 8f7e52aa6e8de6edf4cc874015767d490a90d89b
 
         public SelectTemplateElements()
         {
@@ -26,16 +21,10 @@ namespace Template_Designer
             //Constants c = new Constants();
             loadOptions();
              //adds comments to checkedListBox from comment array
-<<<<<<< HEAD
 
           
             sectionNameLabel.Text = Template.sectionTitle[sectionCount];
 
-=======
-
-          
-            sectionNameLabel.Text = Template.sectionTitle[sectionCount];
->>>>>>> 8f7e52aa6e8de6edf4cc874015767d490a90d89b
 
 
         }
@@ -56,14 +45,6 @@ namespace Template_Designer
                 {
                     commentsCheckedListBox.Items.Add(Template.optionTitle[i]);
                 }
-            }
-        }
-        public void loadOptions()
-        {
-            //Template.optionsCount[optionCount];
-            for(int i = 0; i < Template.optionsCount[optionCount]; i++)
-            {
-                commentsCheckedListBox.Items.Add(Template.optionTitle[i]);
             }
         }
 
@@ -108,36 +89,20 @@ namespace Template_Designer
 
         private void addCommentsButton_Click(object sender, EventArgs e)
         {
-<<<<<<< HEAD
-=======
-
->>>>>>> 8f7e52aa6e8de6edf4cc874015767d490a90d89b
             sectionCount++;
             if(sectionCount == Template.sectionID.Count())
             {
+                ViewFeedback VF = new ViewFeedback(); // opens preview window if user wants to preview the feedback
+                VF.ShowDialog();
                 this.Close();
             }
             else
             {
-<<<<<<< HEAD
                 optionCount++;
                     commentsCheckedListBox.Items.Clear();
                 loadOptions();
                 sectionNameLabel.Text = Template.sectionTitle[sectionCount];
             }
-=======
-                sectionNameLabel.Text = Template.sectionTitle[sectionCount];
-            }
-            
-            
-
-            
-            
-            
-            
-            
-
->>>>>>> 8f7e52aa6e8de6edf4cc874015767d490a90d89b
         }
 
         private void viewCommentRichTextBox_TextChanged_1(object sender, EventArgs e)

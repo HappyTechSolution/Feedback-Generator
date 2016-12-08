@@ -30,6 +30,7 @@
         {
             this.ViewAllFeedbackRichTextBox = new System.Windows.Forms.RichTextBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.SaveButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // ViewAllFeedbackRichTextBox
@@ -45,7 +46,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(20, 620);
+            this.button1.Location = new System.Drawing.Point(18, 625);
             this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(112, 35);
@@ -54,11 +55,22 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // SaveButton
+            // 
+            this.SaveButton.Location = new System.Drawing.Point(585, 625);
+            this.SaveButton.Name = "SaveButton";
+            this.SaveButton.Size = new System.Drawing.Size(109, 37);
+            this.SaveButton.TabIndex = 3;
+            this.SaveButton.Text = "Save";
+            this.SaveButton.UseVisualStyleBackColor = true;
+            this.SaveButton.Click += new System.EventHandler(this.button2_Click);
+            // 
             // ViewFeedback
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(729, 674);
+            this.Controls.Add(this.SaveButton);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.ViewAllFeedbackRichTextBox);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -72,5 +84,6 @@
 
         private System.Windows.Forms.RichTextBox ViewAllFeedbackRichTextBox;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button SaveButton;
     }
 }
