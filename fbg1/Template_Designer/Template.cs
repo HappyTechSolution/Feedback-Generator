@@ -18,7 +18,14 @@ namespace Template_Designer
         public static List<string> optionTitle = new List<string>();
         public static List<string> optionComment = new List<string>();
         public static List<int> optionsCount = new List<int>();
+<<<<<<< HEAD
+        public static int x = 0;
+        public static List<string> selectedOptionTitle = new List<string>();
+        public static List<string> selectedOptionComment = new List<string>();
+        public static List<int> secCount = new List<int>();
+=======
         
+>>>>>>> 8f7e52aa6e8de6edf4cc874015767d490a90d89b
 
         public void getTName(string x)
         {

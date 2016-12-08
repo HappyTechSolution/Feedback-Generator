@@ -12,8 +12,13 @@ namespace Template_Designer
 {
     public partial class SelectTemplateElements : Form
     {
+<<<<<<< HEAD
+        int optionCount = 0;
+        int sectionCount = 0;
+=======
         int sectionCount = 0;
         int optionCount = 0;
+>>>>>>> 8f7e52aa6e8de6edf4cc874015767d490a90d89b
 
         public SelectTemplateElements()
         {
@@ -21,12 +26,37 @@ namespace Template_Designer
             //Constants c = new Constants();
             loadOptions();
              //adds comments to checkedListBox from comment array
+<<<<<<< HEAD
 
           
             sectionNameLabel.Text = Template.sectionTitle[sectionCount];
 
+=======
+
+          
+            sectionNameLabel.Text = Template.sectionTitle[sectionCount];
+>>>>>>> 8f7e52aa6e8de6edf4cc874015767d490a90d89b
 
 
+        }
+        public void loadOptions()
+        {
+
+            if (optionCount > 0)
+            {
+                for (int i = Template.optionsCount[optionCount]; i < Template.optionsCount[optionCount] + Template.optionsCount[optionCount]; i++)
+                {
+                    commentsCheckedListBox.Items.Add(Template.optionTitle[i]);
+                }
+
+            }
+            else
+            {
+                for (int i = 0; i < Template.optionsCount[optionCount]; i++)
+                {
+                    commentsCheckedListBox.Items.Add(Template.optionTitle[i]);
+                }
+            }
         }
         public void loadOptions()
         {
@@ -62,8 +92,6 @@ namespace Template_Designer
         private void commentsCheckedListBox_SelectedIndexChanged(object sender, EventArgs e) // selected comment in checkBox displays in richTextBox
         {
 
-
-
         }
 
 
@@ -80,7 +108,10 @@ namespace Template_Designer
 
         private void addCommentsButton_Click(object sender, EventArgs e)
         {
+<<<<<<< HEAD
+=======
 
+>>>>>>> 8f7e52aa6e8de6edf4cc874015767d490a90d89b
             sectionCount++;
             if(sectionCount == Template.sectionID.Count())
             {
@@ -88,6 +119,13 @@ namespace Template_Designer
             }
             else
             {
+<<<<<<< HEAD
+                optionCount++;
+                    commentsCheckedListBox.Items.Clear();
+                loadOptions();
+                sectionNameLabel.Text = Template.sectionTitle[sectionCount];
+            }
+=======
                 sectionNameLabel.Text = Template.sectionTitle[sectionCount];
             }
             
@@ -99,6 +137,7 @@ namespace Template_Designer
             
             
 
+>>>>>>> 8f7e52aa6e8de6edf4cc874015767d490a90d89b
         }
 
         private void viewCommentRichTextBox_TextChanged_1(object sender, EventArgs e)
@@ -108,7 +147,22 @@ namespace Template_Designer
 
         private void commentsCheckedListBox_SelectedIndexChanged_1(object sender, EventArgs e)
         {
-            viewCommentRichTextBox.Text = commentsCheckedListBox.SelectedItem.ToString(); //Add comments from section 
+            Template.x = Convert.ToInt32(commentsCheckedListBox.SelectedIndex);
+            if (optionCount == 0)
+            {
+                viewCommentRichTextBox.Text = Template.optionComment[Template.x].ToString();
+                Template.selectedOptionTitle.Add(Template.optionTitle[Template.x]);
+                Template.selectedOptionComment.Add(Template.optionComment[Template.x]);
+                Template.secCount.Add(sectionCount);
+            }
+            else
+            {
+                Template.x = Template.x + Template.optionsCount[optionCount];
+                viewCommentRichTextBox.Text = Template.optionComment[Template.x].ToString();
+                Template.selectedOptionTitle.Add(Template.optionTitle[Template.x]);
+                Template.selectedOptionComment.Add(Template.optionComment[Template.x]);
+                Template.secCount.Add(sectionCount);
+            }
         }
     }
 }

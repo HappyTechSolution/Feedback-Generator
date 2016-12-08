@@ -305,3 +305,24 @@ C:\Users\ezdon\Documents\Visual Studio 2015\Projects\Feedback-Generator-UserStor
 C:\Users\ezdon\Documents\Visual Studio 2015\Projects\Feedback-Generator-UserStoryTwo\fbg1\Template_Designer\obj\Debug\Template_Designer.viewDatabase.resources
 C:\Users\ezdon\Documents\Visual Studio 2015\Projects\Feedback-Generator-UserStoryTwo\fbg1\Template_Designer\obj\Debug\Template_Designer.ViewFeedback.resources
 C:\Users\ezdon\Documents\Visual Studio 2015\Projects\Feedback-Generator-UserStoryTwo\fbg1\Template_Designer\obj\Debug\feedbackGenerator.csproj.GenerateResource.Cache
+<<<<<<< HEAD
+C:\Users\kummy\Downloads\Feedback-Generator-UserStoryTwo (4)\Feedback-Generator-UserStoryTwo\fbg1\Template_Designer\bin\Debug\Template_Designer.exe.config
+C:\Users\kummy\Downloads\Feedback-Generator-UserStoryTwo (4)\Feedback-Generator-UserStoryTwo\fbg1\Template_Designer\obj\Debug\Template_Designer.exe
+C:\Users\kummy\Downloads\Feedback-Generator-UserStoryTwo (4)\Feedback-Generator-UserStoryTwo\fbg1\Template_Designer\obj\Debug\Template_Designer.pdb
+C:\Users\kummy\Downloads\Feedback-Generator-UserStoryTwo (4)\Feedback-Generator-UserStoryTwo\fbg1\Template_Designer\bin\Debug\feedbackDatabse.mdf
+C:\Users\kummy\Downloads\Feedback-Generator-UserStoryTwo (4)\Feedback-Generator-UserStoryTwo\fbg1\Template_Designer\bin\Debug\feedbackDatabse_log.ldf
+C:\Users\kummy\Downloads\Feedback-Generator-UserStoryTwo (4)\Feedback-Generator-UserStoryTwo\fbg1\Template_Designer\bin\Debug\Template_Designer.exe
+C:\Users\kummy\Downloads\Feedback-Generator-UserStoryTwo (4)\Feedback-Generator-UserStoryTwo\fbg1\Template_Designer\bin\Debug\Template_Designer.pdb
+C:\Users\kummy\Downloads\Feedback-Generator-UserStoryTwo (4)\Feedback-Generator-UserStoryTwo\fbg1\Template_Designer\obj\Debug\feedbackGenerator.csprojResolveAssemblyReference.cache
+C:\Users\kummy\Downloads\Feedback-Generator-UserStoryTwo (4)\Feedback-Generator-UserStoryTwo\fbg1\Template_Designer\obj\Debug\Template_Designer.CreateTemplate.resources
+C:\Users\kummy\Downloads\Feedback-Generator-UserStoryTwo (4)\Feedback-Generator-UserStoryTwo\fbg1\Template_Designer\obj\Debug\Template_Designer.CreateTemplateSections.resources
+C:\Users\kummy\Downloads\Feedback-Generator-UserStoryTwo (4)\Feedback-Generator-UserStoryTwo\fbg1\Template_Designer\obj\Debug\Template_Designer.enterSectionTitle.resources
+C:\Users\kummy\Downloads\Feedback-Generator-UserStoryTwo (4)\Feedback-Generator-UserStoryTwo\fbg1\Template_Designer\obj\Debug\Template_Designer.SelectTemplate.resources
+C:\Users\kummy\Downloads\Feedback-Generator-UserStoryTwo (4)\Feedback-Generator-UserStoryTwo\fbg1\Template_Designer\obj\Debug\Template_Designer.SelectTemplateElements.resources
+C:\Users\kummy\Downloads\Feedback-Generator-UserStoryTwo (4)\Feedback-Generator-UserStoryTwo\fbg1\Template_Designer\obj\Debug\Template_Designer.TemplateSelector.resources
+C:\Users\kummy\Downloads\Feedback-Generator-UserStoryTwo (4)\Feedback-Generator-UserStoryTwo\fbg1\Template_Designer\obj\Debug\Template_Designer.Properties.Resources.resources
+C:\Users\kummy\Downloads\Feedback-Generator-UserStoryTwo (4)\Feedback-Generator-UserStoryTwo\fbg1\Template_Designer\obj\Debug\Template_Designer.viewDatabase.resources
+C:\Users\kummy\Downloads\Feedback-Generator-UserStoryTwo (4)\Feedback-Generator-UserStoryTwo\fbg1\Template_Designer\obj\Debug\Template_Designer.ViewFeedback.resources
+C:\Users\kummy\Downloads\Feedback-Generator-UserStoryTwo (4)\Feedback-Generator-UserStoryTwo\fbg1\Template_Designer\obj\Debug\feedbackGenerator.csproj.GenerateResource.Cache
+=======
+>>>>>>> 8f7e52aa6e8de6edf4cc874015767d490a90d89b

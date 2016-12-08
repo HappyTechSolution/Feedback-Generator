@@ -34,18 +34,21 @@
             // 
             // ViewAllFeedbackRichTextBox
             // 
-            this.ViewAllFeedbackRichTextBox.Location = new System.Drawing.Point(12, 12);
+            this.ViewAllFeedbackRichTextBox.Location = new System.Drawing.Point(18, 18);
+            this.ViewAllFeedbackRichTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ViewAllFeedbackRichTextBox.Name = "ViewAllFeedbackRichTextBox";
             this.ViewAllFeedbackRichTextBox.ReadOnly = true;
-            this.ViewAllFeedbackRichTextBox.Size = new System.Drawing.Size(462, 384);
+            this.ViewAllFeedbackRichTextBox.Size = new System.Drawing.Size(691, 589);
             this.ViewAllFeedbackRichTextBox.TabIndex = 1;
             this.ViewAllFeedbackRichTextBox.Text = "";
+            this.ViewAllFeedbackRichTextBox.TextChanged += new System.EventHandler(this.ViewAllFeedbackRichTextBox_TextChanged);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(13, 403);
+            this.button1.Location = new System.Drawing.Point(20, 620);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(112, 35);
             this.button1.TabIndex = 2;
             this.button1.Text = "Back";
             this.button1.UseVisualStyleBackColor = true;
@@ -53,11 +56,12 @@
             // 
             // ViewFeedback
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(486, 438);
+            this.ClientSize = new System.Drawing.Size(729, 674);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.ViewAllFeedbackRichTextBox);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "ViewFeedback";
             this.Text = "ViewFeedback";
             this.ResumeLayout(false);
