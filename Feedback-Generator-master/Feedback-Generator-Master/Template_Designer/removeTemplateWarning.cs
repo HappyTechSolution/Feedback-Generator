@@ -29,12 +29,14 @@ namespace Template_Designer
 
         private void yesButton_Click(object sender, EventArgs e)
         {
+            TemplateSelector test = new TemplateSelector();
             removeTemplate remove = new removeTemplate();
             remove.getLatestRemoveTemplateID();
             remove.getLatestRemoveSectionID();
             remove.getLastestRemoveOptionsID();
             remove.removeChosenTemplate();
             this.Close();
+            //test.Visible = true;
         }
     }
 }

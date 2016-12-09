@@ -26,6 +26,7 @@ namespace Template_Designer
             input.addTemplatePosition(textBoxTemplatePosition.Text);
             input.addTemplateFeedbackType(comboBoxSelectFeedbackTypeBox.Text);
             input.writeTemplateDetailsToDB();
+            this.Close();
             enterSectionTitle sectionTitleEnter = new enterSectionTitle();
             sectionTitleEnter.Show();
         }

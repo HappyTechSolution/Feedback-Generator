@@ -99,8 +99,9 @@
             this.back_button.Name = "back_button";
             this.back_button.Size = new System.Drawing.Size(75, 23);
             this.back_button.TabIndex = 5;
-            this.back_button.Text = "Back";
+            this.back_button.Text = "Close";
             this.back_button.UseVisualStyleBackColor = true;
+            this.back_button.Click += new System.EventHandler(this.back_button_Click);
             // 
             // createTemplateTableAdapter
             // 
